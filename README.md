@@ -220,7 +220,7 @@ Además del código, el proyecto incluye:
 | Integrante | Aportaciones |
 |---|---|
 | Raúl Gómez Vera | Entrada principal, menú, opción 1, logo y manual de usuario |
-| ArturoRP181 | Opción 2 (cálculo del reparto) y documento de costes |
+| Arturo Rivera | Opción 2 (cálculo del reparto) y documento de costes |
 | Rafa Valero Jiménez | Opción 3 (mostrar el reparto), README y documentación del proyecto |
 
 > Proyecto desarrollado con **Java** e **IntelliJ IDEA**, y gestionado con **Git** y **GitHub**.

@@ -20,7 +20,8 @@ public class Principal {
         double saldo4 = 0;
         double saldo5 = 0;
 
-        // Indica si ya se ha calculado el reparto (opción 2)
+        // Indican si ya se han introducido los gastos (opción 1) y si ya se ha calculado el reparto (opción 2)
+        boolean gastosIntroducidos = false;
         boolean repartoCalculado = false;
 
         if (viajeros > 5 || viajeros < 1) {
@@ -46,16 +47,15 @@ public class Principal {
                     v4 = s.nextInt();
                     v5 = s.nextInt();
 
+                    gastosIntroducidos = true;
                     // Si cambian los gastos, hay que volver a calcular el reparto
                     repartoCalculado = false;
 
                 } else if (menu == 2) {
-                    if (v1 == 0 && v2 == 0 && v3 == 0 && v4 == 0 && v5 == 0) {
+                    if (!gastosIntroducidos) {
                         System.out.println("Debe realizar el paso 1 en el menú antes de continuar.");
-                    }
-
-                    // Solo se calcula si ya se ha hecho el paso 1
-                    if (v1 != 0 || v2 != 0 || v3 != 0 || v4 != 0 || v5 != 0) {
+                    } else {
+                        // Solo se calcula si ya se ha hecho el paso 1
                         int total = 0;
                         int reales = 0;
 
