@@ -20,6 +20,9 @@ public class Principal {
         double saldo4 = 0;
         double saldo5 = 0;
 
+        // Indica si ya se ha calculado el reparto (opción 2)
+        boolean repartoCalculado = false;
+
         if (viajeros > 5 || viajeros < 1) {
             System.out.println("ERROR, debe haber al menos 1 viajero y máximo 5 viajeros implicados.");
         } else {
@@ -42,6 +45,9 @@ public class Principal {
                     v3 = s.nextInt();
                     v4 = s.nextInt();
                     v5 = s.nextInt();
+
+                    // Si cambian los gastos, hay que volver a calcular el reparto
+                    repartoCalculado = false;
 
                 } else if (menu == 2) {
                     if (v1 == 0 && v2 == 0 && v3 == 0 && v4 == 0 && v5 == 0) {
@@ -87,12 +93,44 @@ public class Principal {
                             if (v5 != -1) saldo5 = v5 - media;
                             else saldo5 = 0;
 
+                            repartoCalculado = true;
                             System.out.println("Reparto calculado correctamente.");
                         }
                     }
 
                 } else if (menu == 3) {
+                    if (!repartoCalculado) {
+                        System.out.println("Debe realizar los pasos 1 y 2 en el menú antes de continuar.");
+                    } else {
+                        System.out.println("---REPARTO DE GASTOS---");
 
+                        // Saldo positivo: debe recibir. Saldo negativo: debe pagar.
+                        if (v1 != -1) {
+                            if (saldo1 > 0) System.out.printf("Viajero 1 debe recibir %.2f €%n", saldo1);
+                            else if (saldo1 < 0) System.out.printf("Viajero 1 debe pagar %.2f €%n", -saldo1);
+                            else System.out.println("Viajero 1 no debe pagar ni recibir nada.");
+                        }
+                        if (v2 != -1) {
+                            if (saldo2 > 0) System.out.printf("Viajero 2 debe recibir %.2f €%n", saldo2);
+                            else if (saldo2 < 0) System.out.printf("Viajero 2 debe pagar %.2f €%n", -saldo2);
+                            else System.out.println("Viajero 2 no debe pagar ni recibir nada.");
+                        }
+                        if (v3 != -1) {
+                            if (saldo3 > 0) System.out.printf("Viajero 3 debe recibir %.2f €%n", saldo3);
+                            else if (saldo3 < 0) System.out.printf("Viajero 3 debe pagar %.2f €%n", -saldo3);
+                            else System.out.println("Viajero 3 no debe pagar ni recibir nada.");
+                        }
+                        if (v4 != -1) {
+                            if (saldo4 > 0) System.out.printf("Viajero 4 debe recibir %.2f €%n", saldo4);
+                            else if (saldo4 < 0) System.out.printf("Viajero 4 debe pagar %.2f €%n", -saldo4);
+                            else System.out.println("Viajero 4 no debe pagar ni recibir nada.");
+                        }
+                        if (v5 != -1) {
+                            if (saldo5 > 0) System.out.printf("Viajero 5 debe recibir %.2f €%n", saldo5);
+                            else if (saldo5 < 0) System.out.printf("Viajero 5 debe pagar %.2f €%n", -saldo5);
+                            else System.out.println("Viajero 5 no debe pagar ni recibir nada.");
+                        }
+                    }
                 }
             } while (menu < 4);
         }
