@@ -113,7 +113,7 @@ Después aparece el **menú principal**:
 |---|---|
 | **1. Introducir gastos** | Pide lo que ha pagado cada uno de los 5 viajeros, uno por línea. Para un viajero que no existe se escribe **`-1`**. |
 | **2. Calcular reparto** | Suma todos los gastos, calcula la media y obtiene el saldo de cada viajero. |
-| **3. Mostrar reparto** | Muestra por pantalla cuánto debe pagar o recibir cada viajero. |
+| **3. Mostrar reparto** | Muestra por pantalla cuánto debe pagar o recibir cada viajero, con 2 decimales. Los viajeros con `-1` no aparecen. |
 | **4. Salir** | Cierra el programa. |
 
 ### 🔒 Orden obligatorio
@@ -122,8 +122,13 @@ El programa controla que las opciones se hagan en orden:
 
 - No se puede usar la **opción 2** sin haber hecho antes la **opción 1**.
 - No se puede usar la **opción 3** sin haber hecho antes la **1** y la **2**.
+- Si se vuelven a introducir los gastos (**opción 1**) después de calcular, hay que volver a calcular el reparto (**opción 2**) antes de mostrarlo, porque el anterior ya no vale.
 
-Si se intenta, el programa avisa y vuelve al menú.
+Si se intenta, el programa avisa y vuelve al menú. Por ejemplo, al elegir la opción 3 sin haber calculado el reparto aparece:
+
+```
+Debe realizar los pasos 1 y 2 en el menú antes de continuar.
+```
 
 ---
 
@@ -171,6 +176,18 @@ Cuatro amigos se van de viaje. El quinto hueco no se usa, así que se pone `-1`:
 
 Así, los viajeros 3 y 4 ponen entre los dos 50 €, que son justo los que tiene que recibir el viajero 1.
 
+Esto es lo que muestra el programa al elegir la **opción 3**:
+
+```
+---REPARTO DE GASTOS---
+Viajero 1 debe recibir 50,00 €
+Viajero 2 no debe pagar ni recibir nada.
+Viajero 3 debe pagar 20,00 €
+Viajero 4 debe pagar 30,00 €
+```
+
+> El viajero 5 no aparece porque se introdujo `-1`.
+
 ---
 
 ## 📁 Estructura del proyecto
@@ -204,6 +221,6 @@ Además del código, el proyecto incluye:
 |---|---|
 | Raúl Gómez Vera | Entrada principal, menú, opción 1, logo y manual de usuario |
 | ArturoRP181 | Opción 2 (cálculo del reparto) y documento de costes |
-| Rafa Valero Jiménez | README y documentación del proyecto |
+| Rafa Valero Jiménez | Opción 3 (mostrar el reparto), README y documentación del proyecto |
 
 > Proyecto desarrollado con **Java** e **IntelliJ IDEA**, y gestionado con **Git** y **GitHub**.
