@@ -111,7 +111,7 @@ Después aparece el **menú principal**:
 
 | Opción | Qué hace |
 |---|---|
-| **1. Introducir gastos** | Pide lo que ha pagado cada uno de los 5 viajeros, uno por línea. Para un viajero que no existe se escribe **`-1`**. |
+| **1. Introducir gastos** | Pide lo que ha pagado cada viajero, uno a uno. Solo pregunta por tantos viajeros como se indicaron al principio (si son 3, pide 3 gastos). Si alguno de ellos al final no cuenta para el reparto, se escribe **`-1`**. |
 | **2. Calcular reparto** | Suma todos los gastos, calcula la media y obtiene el saldo de cada viajero. |
 | **3. Mostrar reparto** | Muestra por pantalla cuánto debe pagar o recibir cada viajero, con 2 decimales. Los viajeros con `-1` no aparecen. |
 | **4. Salir** | Cierra el programa. |
@@ -153,7 +153,7 @@ El cálculo es sencillo:
 
 ## 🧪 Ejemplo de uso
 
-Cuatro amigos se van de viaje. El quinto hueco no se usa, así que se pone `-1`:
+Cuatro amigos se van de viaje. Al empezar se indica que hay **4 viajeros**, así que el programa solo pide 4 gastos:
 
 | Viajero | Ha pagado |
 |---|---|
@@ -161,7 +161,6 @@ Cuatro amigos se van de viaje. El quinto hueco no se usa, así que se pone `-1`:
 | Viajero 2 | 50 € |
 | Viajero 3 | 30 € |
 | Viajero 4 | 20 € |
-| Viajero 5 | `-1` (no existe) |
 
 - **Total:** 100 + 50 + 30 + 20 = **200 €**
 - **Viajeros reales:** 4
@@ -186,7 +185,7 @@ Viajero 3 debe pagar 20,00 €
 Viajero 4 debe pagar 30,00 €
 ```
 
-> El viajero 5 no aparece porque se introdujo `-1`.
+> Si a alguno de los viajeros se le hubiera puesto `-1`, no aparecería en la lista ni contaría para la media.
 
 ---
 
