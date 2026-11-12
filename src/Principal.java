@@ -41,26 +41,18 @@ public class Principal {
                     System.out.println("¿Cuánto han sido los gastos de cada viajero?");
                     System.out.println("Debe introducir el valor -1 para indicar que un viajero no existe.");
 
-                    // Solo se piden los gastos de los viajeros indicados al principio.
-                    // Los que sobran se marcan con -1 (no existen).
+                    // Se piden los gastos de los 5 viajeros.
+                    // Si se introduce -1, ese viajero no existe y no cuenta para el reparto.
                     System.out.println("Gastos del viajero 1:");
                     v1 = s.nextInt();
-                    if (viajeros >= 2) {
-                        System.out.println("Gastos del viajero 2:");
-                        v2 = s.nextInt();
-                    } else v2 = -1;
-                    if (viajeros >= 3) {
-                        System.out.println("Gastos del viajero 3:");
-                        v3 = s.nextInt();
-                    } else v3 = -1;
-                    if (viajeros >= 4) {
-                        System.out.println("Gastos del viajero 4:");
-                        v4 = s.nextInt();
-                    } else v4 = -1;
-                    if (viajeros >= 5) {
-                        System.out.println("Gastos del viajero 5:");
-                        v5 = s.nextInt();
-                    } else v5 = -1;
+                    System.out.println("Gastos del viajero 2:");
+                    v2 = s.nextInt();
+                    System.out.println("Gastos del viajero 3:");
+                    v3 = s.nextInt();
+                    System.out.println("Gastos del viajero 4:");
+                    v4 = s.nextInt();
+                    System.out.println("Gastos del viajero 5:");
+                    v5 = s.nextInt();
 
                     gastosIntroducidos = true;
                     // Si cambian los gastos, hay que volver a calcular el reparto
